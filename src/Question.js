@@ -10,6 +10,9 @@ class Question extends React.Component {
     render() {
         return (
             <div className="question">
+                <div className="leftArrow">
+                    <span>&larr;</span>
+                </div>
                 <h1>Question {this.props.question}</h1>
             </div>
         )

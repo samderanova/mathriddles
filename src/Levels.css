@@ -1,0 +1,11 @@
+.levels {
+    padding: 200px;
+    text-align: center;
+}
+
+.levels button {
+    font-size: 18px;
+    margin: 10px;
+    min-width: 60px;
+    padding: 10px;
+}

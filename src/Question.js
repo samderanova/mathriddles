@@ -1,19 +1,13 @@
 import React from 'react';
+var obj = require("./Questions.json");
 
 class Question extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            question: "What is 2*4?",
-        }
-    }
     render() {
+        var question = obj["question"+this.props.questionNum];
         return (
             <div className="question">
-                <div className="leftArrow">
-                    <span>&larr;</span>
-                </div>
-                <h1>Question {this.props.question}</h1>
+                <h1>Level {this.props.questionNum}</h1>
+                <h2>{question}</h2>
             </div>
         )
     }

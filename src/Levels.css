@@ -1,9 +1,14 @@
-.levels {
+.leftArrow {
+    border: 0;
+    margin: 0;
+}
+
+.buttonQuestions {
     padding: 200px;
     text-align: center;
 }
 
-.levels button {
+.buttonQuestions button {
     font-size: 18px;
     margin: 10px;
     min-width: 60px;

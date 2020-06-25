@@ -1,3 +1,36 @@
+@media (prefers-color-scheme: dark) { 
+    .display #leftArrow, .display #rightArrow {
+        background-color: black;
+        color: white;
+    }
+    .display #leftArrow:hover {
+        background-color: darkgray;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .display #leftArrow, .display #rightArrow {
+        background-color: white;
+    }
+    .display #leftArrow:hover {
+        background-color: lightgray;
+    }
+}
+
 .question {
     text-align: center;
+}
+
+.display #leftArrow, .display #rightArrow {
+    border: 0;
+    font-size: 30px;
+    float: left;
+}
+
+.display #leftArrow:hover {
+    transition: 0.25s ease;
+}
+
+.display #rightArrow {
+    float: right;
 }

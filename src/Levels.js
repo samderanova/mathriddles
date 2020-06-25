@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Levels.css';
-import Question from './Question.js';
+import Question from './Question';
 import './Questions.json';
 
 var newButtons = [];
@@ -20,11 +20,11 @@ class Levels extends React.Component {
     render () {
         return (
             <div className="levels">
-                <button type="button" className="leftArrow">&larr;</button>
                 <div className="container">
                     <div className="buttonQuestions">
                         <h1>Levels</h1>
                         <div className="buttons">
+                            <button type="button" className="leftArrow" onClick={() => document.location.reload()}>&larr;</button>
                             {newButtons}
                         </div>
                     </div>

@@ -21,7 +21,9 @@ class Question extends React.Component {
         });
     }
     render() {
-        var getQuestion = obj["question"+this.props.questionNum];
+        var nextLevelBtn = document.getElementById("rightArrow");
+        var questionNum = this.props.questionNum;
+        var getQuestion = obj["question"+questionNum];
         var output = [];
         function renderQuestion() {
             var individualClue = getQuestion.split("\n");
@@ -30,30 +32,42 @@ class Question extends React.Component {
             }
         }
         renderQuestion();
+        function renderPreviousLevel() {
+            if (questionNum === 1) document.location.reload()
+            else ReactDOM.render(<React.StrictMode><Question questionNum={questionNum-1} /></React.StrictMode>, document.getElementById("root"))
+        }
+        function renderNewLevel() {
+            ReactDOM.render(<React.StrictMode><Question questionNum={questionNum+1} /></React.StrictMode>, document.getElementById("root"));
+            document.getElementById("CorI").innerHTML = "";
+            document.getElementById("ans").value = "";
+            nextLevelBtn.onclick = null;
+            nextLevelBtn.setAttribute("class", "");
+        }
         return (
             <div className="display">
-                <button type="button" id="leftArrow" onClick={() => document.location.reload()}>&larr;</button>
-                <button type="button" id="rightArrow" disabled={true}>&rarr;</button>
+                <button type="button" id="leftArrow" onClick={renderPreviousLevel}>&larr;</button>
+                <button type="button" id="rightArrow">&rarr;</button>
                 <div className="container">
                     <div className="question">
-                        <h1>Level {this.props.questionNum}</h1>
+                        <h1>Level {questionNum}</h1>
                         {output}
                         <input type="text" id="ans" placeholder="Answer" onChange={this.handleChange}></input>
-                        <button type="submit" id="ansSubmit" onClick={() => {
+                        <button type="submit" id="ansSubmit" onClick={_ => {
                             var value = this.state.value;
-                            if (value !== obj["ans"+this.props.questionNum]) {
+                            if (value !== obj["ans"+questionNum]) {
                                 document.getElementById("CorI").innerHTML = "Incorrect! Try again.";
                             }
                             else {
-                                document.getElementById("CorI").innerHTML = "Correct!";
+                                document.getElementById("CorI").innerHTML = "Correct! Head to the next level.";
                                 // document.cookie = `solved${this.props.questionNum}=true`;
-                                var nextLevelBtn = document.getElementById("rightArrow");
-                                nextLevelBtn.removeAttribute("disabled");
-                                nextLevelBtn.setAttribute("onclick", console.log("Hello"));
+                                nextLevelBtn.setAttribute("class", "active")
+                                nextLevelBtn.onclick = function () {
+                                    renderNewLevel();
+                                }
                             }
                         }}>&uarr;</button>
+                        <p id="CorI"></p>
                     </div>
-                    <h3 id="CorI"></h3>
                 </div>
             </div>
         )

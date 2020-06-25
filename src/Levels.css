@@ -19,9 +19,17 @@
     }
 }
 
-.buttonQuestions {
-    padding: 200px;
-    text-align: center;
+@media only screen and (max-width: 1100px) {
+    .buttonQuestions {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .buttonQuestions {
+        padding: 200px;
+        text-align: center;
+    }
 }
 
 .buttons .leftArrow {
@@ -33,7 +41,6 @@
     background-color: darkgray;
     transition: 0.5s;
 }
-
 
 
 .buttons button:hover {

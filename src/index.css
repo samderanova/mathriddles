@@ -10,7 +10,6 @@
   }
 }
 
-
 .levels, .display {
   animation-name: fadeIn;
   animation-duration: 2s;
@@ -27,10 +26,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100vh;
-  justify-content: center;
-  align-content: center;
+@media only screen and (min-width: 800px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+  }  
 }

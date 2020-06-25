@@ -34,3 +34,8 @@
 .display #rightArrow {
     float: right;
 }
+
+.active:hover {
+    background-color: lightgray !important;
+    transition: 0.25s ease;
+}

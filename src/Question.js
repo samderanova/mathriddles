@@ -6,24 +6,29 @@ var obj = require("./Questions.json");
 class Question extends React.Component {
     constructor(props) {
         super(props);
+        // the onload value of the input text box is ""
         this.state = {value: ""}
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(event) {
+        // simultaneously sets state as the user is typing in the text box
         this.setState({value: event.target.value});
     }
     componentDidMount () {
+        // when a user clicks enter, their answer is submitted
         document.getElementById("ans").addEventListener("keyup", function(event) {
             event.preventDefault();
-            if (event.keyCode === 13) {
-                document.getElementById("ansSubmit").click();
-            }
+            if (event.keyCode === 13) document.getElementById("ansSubmit").click();
         });
     }
     render() {
         var nextLevelBtn = document.getElementById("rightArrow");
+        
+        // get questions from Questions.json according to the props passed into <Question questionNum = {props} />
         var questionNum = this.props.questionNum;
         var getQuestion = obj["question"+questionNum];
+        
+        // renders each individual line of the clue separated by the \n's from the JSON
         var output = [];
         function renderQuestion() {
             var individualClue = getQuestion.split("\n");
@@ -32,10 +37,15 @@ class Question extends React.Component {
             }
         }
         renderQuestion();
+
+        // when the left arrow is clilcked, render  previous level; if there is none, reload the homepage
         function renderPreviousLevel() {
             if (questionNum === 1) document.location.reload()
             else ReactDOM.render(<React.StrictMode><Question questionNum={questionNum-1} /></React.StrictMode>, document.getElementById("root"))
         }
+
+        /* after the level is solved, when the right arrow is clicked, render next clue, clear the correct/incorrect text
+        and input value*/
         function renderNewLevel() {
             ReactDOM.render(<React.StrictMode><Question questionNum={questionNum+1} /></React.StrictMode>, document.getElementById("root"));
             document.getElementById("CorI").innerHTML = "";
@@ -54,16 +64,28 @@ class Question extends React.Component {
                         <input type="text" id="ans" placeholder="Answer" onChange={this.handleChange}></input>
                         <button type="submit" id="ansSubmit" onClick={_ => {
                             var value = this.state.value;
-                            if (value !== obj["ans"+questionNum]) {
+                            var noCommaValue = "";
+
+                            // if a comma is present in the input, remove it and store it in noCommaValue
+                            if (value.includes(",")) {
+                                var splitNumber = value.split(",");
+                                for (var number of splitNumber) { noCommaValue += number; }
+                                noCommaValue = Number(noCommaValue);
+                            }
+                            else noCommaValue = Number(value);
+
+                            // if noCommaValue is not a number or if it's the wrong answer, prompt user to try again
+                            if (isNaN(noCommaValue)) document.getElementById("CorI").innerHTML = "Not a valid response! Try again."
+                            else if (noCommaValue !== obj["ans"+questionNum]) {
                                 document.getElementById("CorI").innerHTML = "Incorrect! Try again.";
                             }
                             else {
+                                /* add html to notify user that answer is correct, set cookie saying that the level is solved,
+                                make the right arrow active, */
                                 document.getElementById("CorI").innerHTML = "Correct! Head to the next level.";
-                                // document.cookie = `solved${this.props.questionNum}=true`;
+                                document.cookie = `${this.props.questionNum}=true`;
                                 nextLevelBtn.setAttribute("class", "active")
-                                nextLevelBtn.onclick = function () {
-                                    renderNewLevel();
-                                }
+                                nextLevelBtn.onclick = function () { renderNewLevel() }
                             }
                         }}>&uarr;</button>
                         <p id="CorI"></p>

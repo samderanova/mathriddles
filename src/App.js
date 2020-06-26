@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Question from './Question';
 import './App.css';
 
 function App() {
@@ -7,7 +9,16 @@ function App() {
       <div className="container">
         <div className="home">  
           <h1>Math Riddles Online</h1>
-          <button type="button" id="play">Play</button>
+          <button type="button" id="play" onClick={ _ => {
+            var cookies = document.cookie;
+            var cookieArray = cookies.split(";");
+            var solvedClues = [];
+            for (var cookie of cookieArray) {
+                solvedClues.push(parseInt(cookie));
+            }
+            var lastClueSolved = solvedClues[solvedClues.length-1];
+            ReactDOM.render(<React.StrictMode><Question questionNum={lastClueSolved+1} /></React.StrictMode>, document.getElementById("root"));
+          }}>Play</button>
           <button type="button" id="levels">Levels</button>
         </div>
       </div>

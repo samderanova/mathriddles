@@ -1,15 +1,15 @@
 {
-    "question1": "2, 3 = 6\n4, 5 = 20\n8, 9 = ?", "ans1": "72",
-    "question2": "0, 1, 1, 2, 3, 5, ?", "ans2": "8",
-    "question3": "", "ans3": "",
-    "question4": "", "ans4": "",
-    "question5": "", "ans5": "",
+    "question1": "2, 3 = 6\n4, 5 = 20\n8, 9 = ?", "ans1": 72,
+    "question2": "0, 1, 1, 2, 3, 5, ?", "ans2": 8,
+    "question3": "1, 2 = 3\n6, 7 = 8\n11, 12 = ?", "ans3": 13,
+    "question4": "2, 4, ?", "ans4": 6,
+    "question5": "5, 25, 125, 625, ?", "ans5": 3125,
     "question6": "", "ans6": "",
     "question7": "", "ans7": "",
     "question8": "", "ans8": "",
     "question9": "", "ans9": "",
-    "question10": "", "ans10": "",
-    "question11": "", "ans11": "",
+    "question10": "1, 2, 6, 24, ?", "ans10": 120,
+    "question11": "x+y=2\n3x+y=0\nx=?", "ans11": 1,
     "question12": "", "ans12": "",
     "question13": "", "ans13": "",
     "question14": "", "ans14": "",
@@ -98,5 +98,5 @@
     "question97": "", "ans97": "",
     "question98": "", "ans98": "",
     "question99": "", "ans99": "",
-    "question100": "b", "ans100": ""
+    "question100": "", "ans100": ""
 }

@@ -4,13 +4,30 @@ import './Levels.css';
 import Question from './Question';
 import './Questions.json';
 
+
+//create buttons labeled from 1 to 100 and stores them in an array
 var newButtons = [];
-for (var i=1; i<101; i++) {
-    newButtons.push(<button key={i} type="button" id={i}>{i}</button>);
+newButtons.push(<button key={1} type="button" id={1}>1</button>)
+for (var i=2; i<101; i++) {
+    newButtons.push(<button key={i} type="button" id={i} disabled>{i}</button>);
 }
 
 class Levels extends React.Component {
     componentDidMount() {
+        //check cookies to see if a level has been solved
+        var cookies = document.cookie;
+        var cookieArray = cookies.split(";");
+        var solvedClues = [];
+        for (var cookie of cookieArray) {
+            solvedClues.push(parseInt(cookie));
+        }
+        for (var i=1; i<=solvedClues.length+1; i++) {
+            /* all buttons except the first level have been disbled; removes disabled attribute for those that have been solved
+            plus the one directly afterwards that has not been solved yet*/
+            document.getElementById(i).removeAttribute("disabled"); 
+        }
+
+        //renders the level to the page
         newButtons.forEach(function (element)  {
             document.getElementById(element.props.id).onclick = function () {
                 return ReactDOM.render(<React.StrictMode><Question questionNum={element.props.id} /></React.StrictMode>, document.getElementById('root'));

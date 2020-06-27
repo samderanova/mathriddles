@@ -82,10 +82,14 @@ class Question extends React.Component {
                             else {
                                 /* add html to notify user that answer is correct, set cookie saying that the level is solved,
                                 make the right arrow active, */
-                                document.getElementById("CorI").innerHTML = "Correct! Head to the next level.";
+                                document.getElementById("CorI").innerHTML = "Correct! Press the \"space\" key to Head to the next level.";
                                 document.cookie = `${this.props.questionNum}=true`;
-                                nextLevelBtn.setAttribute("class", "active")
+                                nextLevelBtn.setAttribute("class", "active");
                                 nextLevelBtn.onclick = function () { renderNewLevel() }
+                                document.body.onkeyup = function(event) {
+                                    event.preventDefault();
+                                    if (event.keyCode === 32) nextLevelBtn.click();
+                                };
                             }
                         }}>&uarr;</button>
                         <p id="CorI"></p>

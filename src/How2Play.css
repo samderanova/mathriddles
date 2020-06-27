@@ -1,26 +1,19 @@
-.home {
-    text-align: center;
-}
-
-.home button {
+.How2Play {
     font-size: 18px;
-    margin: 0 10px;
-    min-width: 100px;
-    padding: 10px;
 }
 
 @media only screen and (max-width: 500px) {
-    .home {
+    .How2Play {
         padding: 30px;
     }
 }
 @media only screen and (min-width: 500px) and (max-width: 900px) {
-    .home {
+    .How2Play {
         padding: 0 150px;
     }
 }
 @media only screen and (min-width: 1000px) {
-    .home {
-        padding: 0 400px;
+    .How2Play {
+        padding: 0 300px;
     }
 }

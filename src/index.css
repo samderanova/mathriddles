@@ -10,7 +10,7 @@
   }
 }
 
-.levels, .display {
+.levels, .display, .How2Play {
   animation-name: fadeIn;
   animation-duration: 2s;
 }
@@ -26,12 +26,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media only screen and (min-width: 800px) {
-  .container {
+@media only screen and (min-width: 300px) {
+  .App .container, .display .container, .How2Play .container {
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
     justify-content: center;
     align-content: center;
-  }  
+    text-align: center;
+  } 
+}
+
+button {
+  border-radius: 5px;
 }

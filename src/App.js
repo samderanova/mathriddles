@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Question from './Question';
+import How2Play from './How2Play';
 import './App.css';
 
 function App() {
@@ -21,10 +22,11 @@ function App() {
               ReactDOM.render(<React.StrictMode><Question questionNum={lastClueSolved+1} /></React.StrictMode>, document.getElementById("root"));
             }
             else {
-              ReactDOM.render(<React.StrictMode><Question questionNum={1} /></React.StrictMode>, document.getElementById("root"));
+              ReactDOM.render(<React.StrictMode><How2Play /></React.StrictMode>, document.getElementById("root"));
             }
           }}>Play</button>
           <button type="button" id="levels">Levels</button>
+          <h3>IMPORTANT: This game relies on cookies to track progress. Clearing them will therefore clear your own progress!</h3>
         </div>
       </div>
     </div>

@@ -24,3 +24,9 @@
         padding: 0 400px;
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    #play, #levels {
+        background-color: lightgray;
+    }
+}

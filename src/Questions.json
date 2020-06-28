@@ -9,7 +9,7 @@
     "question8": "2, 3, 5, 7, ?", "ans8": 11,
     "question9": "1, 2, 6, 24, ?", "ans9": 120,
     "question10": "1, 5, 14, 30, 55, ?", "ans10": 91,
-    "question11": "x+y=2\n3x+y=0\nx=?", "ans11": 1,
+    "question11": "x+y=2\n3x+y=0\nx=?", "ans11": -1,
     "question12": "2, 3 = 6\n4, 5 = 20\n8, 9 = ?", "ans12": 72,
     "question13": "2a=1\nb^2=0.25\na+b=? ", "ans13": 1,
     "question14": "$*$*$=8\n($^10)/2=?", "ans14": 512,

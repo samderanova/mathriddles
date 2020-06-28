@@ -1,37 +1,59 @@
+.material-icons { font-size: 30px; }
 @media (prefers-color-scheme: dark) { 
-    .display #leftArrow, .display #rightArrow {
+    #leftArrow,  #rightArrow, #toHome, #toLevels {
         background-color: black;
         color: white;
     }
-    .display #leftArrow:hover {
+    #leftArrow:hover, #toHome:hover, #toLevels:hover {
         background-color: darkgray;
     }
-}
-
-@media (prefers-color-scheme: light) {
-    .display #leftArrow, .display #rightArrow {
-        background-color: white;
-    }
-    .display #leftArrow:hover {
+    #ansSubmit {
         background-color: lightgray;
     }
 }
 
-.question {
-    text-align: center;
+@media (prefers-color-scheme: light) {
+    #leftArrow, #rightArrow, #toHome, #toLevels {
+        background-color: white;
+    }
+    #leftArrow:hover, #toHome:hover, #toLevels:hover {
+        background-color: lightgray;
+    }
 }
 
-.display #leftArrow, .display #rightArrow {
+#root { position: relative;}
+
+#ans { padding: 5px; }
+
+#ansSubmit {
+    border-radius: 0;
+    padding: 5px 10px;
+}
+
+.question { text-align: center; }
+
+#leftArrow, #rightArrow, #toHome, #toLevels {
     border: 0;
     font-size: 30px;
+}
+
+#leftArrow { float: left; }
+
+#leftArrow:hover, #rightArrow:hover, #toHome:hover, #toLevels:hover { transition: 0.25s ease; }
+
+#rightArrow { float: right; }
+
+#toHome {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     float: left;
 }
 
-.display #leftArrow:hover {
-    transition: 0.25s ease;
-}
-
-.display #rightArrow {
+#toLevels {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     float: right;
 }
 

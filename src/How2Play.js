@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Question from './Question';
 import './How2Play.css';
 
-function How2Play() {
+function How2Play() {   
     return (
         <div className="How2Play">
             <div className="container">
@@ -18,7 +18,7 @@ function How2Play() {
                         contains different patterns that need to be applied to the rest of the clues in order to complete the 
                         level. Naturally, until one level is solved, the player may not move on to the next one.</p>
                     <h2>Good luck and let your skills be put to the test!</h2> 
-                    <button type="button" onClick={_ => ReactDOM.render(<React.StrictMode><Question questionNum={1} /></React.StrictMode>)}>Level 1</button>
+                    <button type="button" onClick={_ => ReactDOM.render(<React.StrictMode><Question questionNum={1} /></React.StrictMode>, document.getElementById("root"))}>Level 1</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Question.css';
+import Levels from './Levels';
 var obj = require("./Questions.json");
 
 class Question extends React.Component {
@@ -57,6 +58,10 @@ class Question extends React.Component {
             <div className="display">
                 <button type="button" id="leftArrow" onClick={renderPreviousLevel}>&larr;</button>
                 <button type="button" id="rightArrow">&rarr;</button>
+                <button type="button" id="toHome" onClick={_ => document.location.reload()}><i className="material-icons">home</i></button>
+                <button type="button" id="toLevels" onClick={_ => {
+                    ReactDOM.render(<React.StrictMode><Levels /></React.StrictMode>, document.getElementById("root"));
+                }}><i className="material-icons">menu</i></button>
                 <div className="container">
                     <div className="question">
                         <h1>Level {questionNum}</h1>

@@ -26,16 +26,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media only screen and (min-width: 500px) {
-  .App .container, .display .container, .How2Play .container{
+@media only screen and (min-width: 0px) {
+  .App .container, .display .container, .How2Play .container {
     display: flex;
-    display: -webkit-flex;
+    display: -moz-flex;
+    display: -webkit-flex;  
     flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
     height: 100vh;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
     justify-content: center;
+    -webkit-align-content: center;
     align-content: center;
-    text-align: center;
   } 
 }
 

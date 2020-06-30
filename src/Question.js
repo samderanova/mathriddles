@@ -27,17 +27,30 @@ class Question extends React.Component {
         
         // get questions from Questions.json according to the props passed into <Question questionNum = {props} />
         var questionNum = this.props.questionNum;
-        var getQuestion = obj["question"+questionNum];
+        var output = [];
+        if (questionNum === 16) {
+            output.push(
+            <div key={1}>
+                <h3><span className="triangle">&#9651;</span> + <span className="square">&#9633;</span> = 2</h3>
+                <h3><span className="triangle">&#9651;<sup>3</sup></span> = 216</h3>
+                <h3><span className="square">&#9633;<sup>4</sup></span> = ?</h3>
+            </div>
+            );
+        }
+        else {
+            function renderQuestion() {
+                var getQuestion = obj["question"+questionNum];
+                var individualClue = getQuestion.split("\n");
+                for (var i=0; i<individualClue.length; i++) {
+                    output.push(<h3 key={i}>{individualClue[i]}</h3>);
+                }
+            }
+            renderQuestion();
+        } 
         
         // renders each individual line of the clue separated by the \n's from the JSON
-        var output = [];
-        function renderQuestion() {
-            var individualClue = getQuestion.split("\n");
-            for (var i=0; i<individualClue.length; i++) {
-                output.push(<h3 key={i}>{individualClue[i]}</h3>);
-            }
-        }
-        renderQuestion();
+        
+        
 
         // when the left arrow is clilcked, render  previous level; if there is none, reload the homepage
         function renderPreviousLevel() {
@@ -56,12 +69,14 @@ class Question extends React.Component {
         }
         return (
             <div className="display">
+
                 <button type="button" id="leftArrow" onClick={renderPreviousLevel}>&larr;</button>
                 <button type="button" id="rightArrow">&rarr;</button>
                 <button type="button" id="toHome" onClick={_ => document.location.reload()}><i className="material-icons">home</i></button>
                 <button type="button" id="toLevels" onClick={_ => {
                     ReactDOM.render(<React.StrictMode><Levels /></React.StrictMode>, document.getElementById("root"));
                 }}><i className="material-icons">menu</i></button>
+
                 <div className="container">
                     <div className="question">
                         <h1>Level {questionNum}</h1>

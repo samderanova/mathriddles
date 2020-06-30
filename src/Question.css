@@ -61,3 +61,11 @@
     background-color: lightgray !important;
     transition: 0.25s ease;
 }
+
+.triangle, .square {
+    font-size: 30px;
+}
+
+.triangle sup, .square sup {
+    font-size: 20px;
+}

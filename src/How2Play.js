@@ -17,6 +17,8 @@ function How2Play() {
                         simple as the ones in this level, but the underlying concept is quite understandable. Also, each clue 
                         contains different patterns that need to be applied to the rest of the clues in order to complete the 
                         level. Naturally, until one level is solved, the player may not move on to the next one.</p>
+                    <p>And lastly, in order to have the best experience playing this game, please update your browser to the latest
+                        version possible.</p>
                     <h2>Good luck and let your skills be put to the test!</h2> 
                     <button type="button" onClick={_ => ReactDOM.render(<React.StrictMode><Question questionNum={1} /></React.StrictMode>, document.getElementById("root"))}>Level 1</button>
                 </div>

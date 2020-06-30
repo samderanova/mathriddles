@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9e2d44194d24b771852a210a4af63915",
+    "revision": "0747ca552e3ce6d5ad788581d104a09f",
     "url": "/mathriddles/index.html"
   },
   {
-    "revision": "6994b9866d008060650f",
-    "url": "/mathriddles/static/css/main.61fb6860.chunk.css"
+    "revision": "8bec640d6cca4b5d974d",
+    "url": "/mathriddles/static/css/main.65804bed.chunk.css"
   },
   {
     "revision": "2befabc081a253e56b2e",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mathriddles/static/js/2.d6959bdf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6994b9866d008060650f",
-    "url": "/mathriddles/static/js/main.82feb078.chunk.js"
+    "revision": "8bec640d6cca4b5d974d",
+    "url": "/mathriddles/static/js/main.ebbbecec.chunk.js"
   },
   {
     "revision": "87be166b6ce2d7071eb3",

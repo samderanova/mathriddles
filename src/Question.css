@@ -4,21 +4,13 @@
         background-color: black;
         color: white;
     }
-    #leftArrow:hover, #toHome:hover, #toLevels:hover {
-        background-color: darkgray;
-    }
-    #ansSubmit {
-        background-color: lightgray;
-    }
+    #leftArrow:hover, #toHome:hover, #toLevels:hover { background-color: darkgray; }
+    #ansSubmit { background-color: lightgray; }
 }
 
 @media (prefers-color-scheme: light) {
-    #leftArrow, #rightArrow, #toHome, #toLevels {
-        background-color: white;
-    }
-    #leftArrow:hover, #toHome:hover, #toLevels:hover {
-        background-color: lightgray;
-    }
+    #leftArrow, #rightArrow, #toHome, #toLevels { background-color: white; }
+    #leftArrow:hover, #toHome:hover, #toLevels:hover { background-color: lightgray; }
 }
 
 #root { position: relative;}
@@ -62,10 +54,24 @@
     transition: 0.25s ease;
 }
 
-.triangle, .square {
-    font-size: 30px;
+.shape { font-size: 40px; }
+
+.circle { font-size: 35px; }
+
+.shape sup, .shape sup { font-size: 20px; }
+
+table {
+    border: 1px solid;
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
 }
 
-.triangle sup, .square sup {
-    font-size: 20px;
+td { padding: 10px; }
+
+.symbol { font-size: 30px;}
+
+table, .symbol {
+    vertical-align: middle;
 }

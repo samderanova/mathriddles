@@ -11,10 +11,9 @@ class Question extends React.Component {
         this.state = {value: ""}
         this.handleChange = this.handleChange.bind(this);
     }
-    handleChange(event) {
-        // simultaneously sets state as the user is typing in the text box
-        this.setState({value: event.target.value});
-    }
+    handleChange(event) { this.setState({value: event.target.value}); }
+    // simultaneously sets state as the user is typing in the text box
+    
     componentDidMount () {
         // when a user clicks enter, their answer is submitted
         document.getElementById("ans").addEventListener("keyup", function(event) {
@@ -25,32 +24,163 @@ class Question extends React.Component {
     render() {
         var nextLevelBtn = document.getElementById("rightArrow");
         
-        // get questions from Questions.json according to the props passed into <Question questionNum = {props} />
+        // render unique questions based on characters/shapes unable to be read by JSON
         var questionNum = this.props.questionNum;
         var output = [];
-        if (questionNum === 16) {
-            output.push(
-            <div key={1}>
-                <h3><span className="triangle">&#9651;</span> + <span className="square">&#9633;</span> = 2</h3>
-                <h3><span className="triangle">&#9651;<sup>3</sup></span> = 216</h3>
-                <h3><span className="square">&#9633;<sup>4</sup></span> = ?</h3>
-            </div>
-            );
-        }
-        else {
-            function renderQuestion() {
-                var getQuestion = obj["question"+questionNum];
-                var individualClue = getQuestion.split("\n");
-                for (var i=0; i<individualClue.length; i++) {
-                    output.push(<h3 key={i}>{individualClue[i]}</h3>);
+        switch (questionNum) {
+            case 16:
+                output.push(
+                    <div key={1}>
+                        <h3><span className="shape triangle">&#9651;</span> + <span className="shape square">&#9633;</span> = 2</h3>
+                        <h3><span className="shape triangle">&#9651;<sup>3</sup></span> = 216</h3>
+                        <h3><span className="shape square">&#9633;<sup>4</sup></span> = ?</h3>
+                    </div>
+                );
+                break;
+            case 17:
+                output.push(
+                    <div key={2}>
+                        <h3>A(<span className="circle">&#9675;</span>) = &#960;r<sup>2</sup></h3>
+                        <h3><span className="">r = 3</span></h3>
+                        <h3>A(&#9675;) = ?</h3>
+                        <h3>Round your answer to 3 decimal places.</h3>
+                    </div>
+                );
+                break;
+            case 18:
+                output.push(
+                    <div key={3}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>2</td><td>?</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td><td>4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                );
+                break;
+            case 19:
+                output.push(
+                    <div key={4}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>3</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td><td>10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span className="symbol">*</span>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>1</td><td>4</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td><td>9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span className="symbol">=</span>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>3</td><td>20</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td><td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Be careful! These aren't matrices!</h3>
+                    </div>
+                );
+                break;
+            case 22:
+                output.push(
+                    <div key={5}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>6</td><td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>100</td><td>42</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>106</td><td>45</td>
+                                </tr>
+                                <tr>
+                                    <td>?</td><td>252</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                );
+                break;
+            case 23:
+                output.push(
+                    <div key={6}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>1</td><td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>12</td><td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>11</td><td>20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td>?</td>
+                                </tr>
+                                <tr>
+                                    <td>141</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                );
+                break;
+            case 24:
+                output.push(
+                    <div key={7}>
+                        <h3><span className="circle">&#9675;</span> % <span className="shape square">&#9633;</span> = 5</h3>
+                        <h3><span className="symbol sqrt">&#8730;</span><span className="shape square">&#9633;</span> = 5</h3>
+                        <h3><span className="circle">&#9675;</span> = ?</h3>
+                    </div>
+                );
+                break;
+            default:
+                /* get questions from Questions.json according to the props passed into <Question questionNum = {props} />
+                and render each individual line of the clue separated by the \n's from the JSON*/
+                function renderQuestion() {
+                    var getQuestion = obj["question"+questionNum];
+                    var individualClue = getQuestion.split("\n");
+                    for (var i=0; i<individualClue.length; i++) {
+                        output.push(<h3 key={i}>{individualClue[i]}</h3>);
+                    }
                 }
-            }
-            renderQuestion();
-        } 
-        
-        // renders each individual line of the clue separated by the \n's from the JSON
-        
-        
+                renderQuestion();
+        }
 
         // when the left arrow is clilcked, render  previous level; if there is none, reload the homepage
         function renderPreviousLevel() {

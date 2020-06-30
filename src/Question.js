@@ -169,6 +169,75 @@ class Question extends React.Component {
                     </div>
                 );
                 break;
+            case 33:
+                output.push(
+                    <div key={8}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td><td>25</td><td></td>
+                                </tr>
+                                <tr>
+                                    <td>627</td><td></td><td>???</td>
+                                </tr>
+                                <tr>
+                                    <td></td><td>30</td><td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                );
+                break;
+            case 34:
+                output.push(
+                    <div key={9}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>0.333</td><td>1.333</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td><td>?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Round to 3 decimal places.</h3>
+                    </div>
+                );
+                break;
+            case 35:
+                output.push(
+                    <div key={10}>
+                        <h3>3.14159?6535897932384626</h3>
+                    </div>
+                );
+                break;
+            case 36:
+                output.push(
+                    <div key={11}>
+                        <h3><b>Quarter Note </b><span className="symbol quarter">(&#9833;)</span><b> = 116</b></h3>
+                        <h3><b>Eigth Note </b><span className="symbol eigth">(&#9834;)</span><b> = ?</b></h3>
+                        <h3><span className="symbol">&#9833; + &#9834;</span><b> = 174</b></h3>
+                    </div>
+                );
+                break;
+            case 37:
+                output.push(
+                    <div key={12}>
+                        <h3><b>Quarter Note </b><span className="symbol quarter">(&#9833;)</span><b> = 116</b></h3>
+                        <h3><b>Sixteenth Note </b><span className="symbol sixteenth">(&#9835;)</span><b> = ?</b></h3>
+                    </div>
+                );
+                break;
+            case 38:
+                output.push(
+                    <div key={13}>
+                        <h3><span className="symbol quarter">&#9833;</span><b> / </b><span className="symbol quarter">&#9835;</span>
+                        <b> + 2</b><span className="symbol eigth">&#9834;</span><b> = ?</b>
+                        </h3>
+                    </div>
+                );
+                break;
             default:
                 /* get questions from Questions.json according to the props passed into <Question questionNum = {props} />
                 and render each individual line of the clue separated by the \n's from the JSON*/

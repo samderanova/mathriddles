@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mathriddles/static/css/main.bb416d31.chunk.css",
-    "main.js": "/mathriddles/static/js/main.4496e661.chunk.js",
-    "main.js.map": "/mathriddles/static/js/main.4496e661.chunk.js.map",
+    "main.js": "/mathriddles/static/js/main.811d0831.chunk.js",
+    "main.js.map": "/mathriddles/static/js/main.811d0831.chunk.js.map",
     "runtime-main.js": "/mathriddles/static/js/runtime-main.7a697b4c.js",
     "runtime-main.js.map": "/mathriddles/static/js/runtime-main.7a697b4c.js.map",
     "static/js/2.d6959bdf.chunk.js": "/mathriddles/static/js/2.d6959bdf.chunk.js",
     "static/js/2.d6959bdf.chunk.js.map": "/mathriddles/static/js/2.d6959bdf.chunk.js.map",
     "index.html": "/mathriddles/index.html",
-    "precache-manifest.bbbdfe42504379c480e76e3f1dca014a.js": "/mathriddles/precache-manifest.bbbdfe42504379c480e76e3f1dca014a.js",
+    "precache-manifest.f13b298a002fa77087e88f048b2b33c6.js": "/mathriddles/precache-manifest.f13b298a002fa77087e88f048b2b33c6.js",
     "service-worker.js": "/mathriddles/service-worker.js",
     "static/css/main.bb416d31.chunk.css.map": "/mathriddles/static/css/main.bb416d31.chunk.css.map",
     "static/js/2.d6959bdf.chunk.js.LICENSE.txt": "/mathriddles/static/js/2.d6959bdf.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7a697b4c.js",
     "static/js/2.d6959bdf.chunk.js",
     "static/css/main.bb416d31.chunk.css",
-    "static/js/main.4496e661.chunk.js"
+    "static/js/main.811d0831.chunk.js"
   ]
 }

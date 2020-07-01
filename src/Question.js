@@ -146,15 +146,9 @@ class Question extends React.Component {
                         </table>
                         <table>
                             <tbody>
-                                <tr>
-                                    <td>6</td>
-                                </tr>
-                                <tr>
-                                    <td>?</td>
-                                </tr>
-                                <tr>
-                                    <td>141</td>
-                                </tr>
+                                <tr><td>6</td></tr>
+                                <tr><td>?</td></tr>
+                                <tr><td>141</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -163,7 +157,7 @@ class Question extends React.Component {
             case 24:
                 output.push(
                     <div key={7}>
-                        <h3><span className="circle">&#9675;</span> % <span className="shape square">&#9633;</span> = 5</h3>
+                        <h3><span className="circle">&#9675;</span> / <span className="shape square">&#9633;</span> = 5</h3>
                         <h3><span className="symbol sqrt">&#8730;</span><span className="shape square">&#9633;</span> = 5</h3>
                         <h3><span className="circle">&#9675;</span> = ?</h3>
                     </div>
@@ -206,11 +200,7 @@ class Question extends React.Component {
                 );
                 break;
             case 35:
-                output.push(
-                    <div key={10}>
-                        <h3>3.14159?6535897932384626</h3>
-                    </div>
-                );
+                output.push(<div key={10}><h3>3.14159?6535897932384626</h3></div>);
                 break;
             case 36:
                 output.push(
@@ -235,6 +225,38 @@ class Question extends React.Component {
                         <h3><span className="symbol quarter">&#9833;</span><b> / </b><span className="symbol quarter">&#9835;</span>
                         <b> + 2</b><span className="symbol eigth">&#9834;</span><b> = ?</b>
                         </h3>
+                    </div>
+                );
+                break;
+            case 44:
+                output.push(
+                    <div key={14}>
+                        <h3>x + y = 120</h3>
+                        <h3>y + z = 5</h3>
+                        <h3>z = the greatest zero of the graph of x<sup>2</sup> - 1</h3>
+                    </div>
+                );
+                break;
+            case 48:
+                output.push(
+                    <div key={15}>
+                        <h3 style={{fontSize: "30px"}}>2<sup>2<sup>2<sup>1<sup>0<sup>2<sup>2<sup>2<sup>2<sup>2<sup>2</sup></sup></sup></sup></sup></sup></sup></sup></sup></sup> = ?</h3>
+                    </div>
+                );
+                break;
+            case 51:
+                output.push(
+                    <div key={16}>
+                        <h3>i<sup>2</sup> = -1</h3>
+                        <h3>i<sup>x</sup> + 3 = x</h3>
+                        <h3>x = ?</h3>
+                    </div>
+                );
+                break;
+            case 54:
+                output.push(
+                    <div key={17}>
+                        <h3>(5i + 2)<sup>2</sup> = ? + 20i + 4</h3>
                     </div>
                 );
                 break;

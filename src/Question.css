@@ -1,16 +1,16 @@
 .material-icons { font-size: 30px; }
 @media (prefers-color-scheme: dark) { 
-    #leftArrow,  #rightArrow, #toHome, #toLevels {
+    #leftArrow, #toLevels {
         background-color: black;
         color: white;
     }
-    #leftArrow:hover, #toHome:hover, #toLevels:hover { background-color: darkgray; }
+    #leftArrow:hover, #toLevels:hover { background-color: darkgray; }
     #ansSubmit { background-color: lightgray; }
 }
 
 @media (prefers-color-scheme: light) {
-    #leftArrow, #rightArrow, #toHome, #toLevels { background-color: white; }
-    #leftArrow:hover, #toHome:hover, #toLevels:hover { background-color: lightgray; }
+    #leftArrow, #toLevels { background-color: white; }
+    #leftArrow:hover, #toLevels:hover { background-color: lightgray; }
 }
 
 #root { position: relative;}
@@ -24,28 +24,16 @@
 
 .question { text-align: center; }
 
-#leftArrow, #rightArrow, #toHome, #toLevels {
+#leftArrow, #toLevels {
     border: 0;
     font-size: 30px;
 }
 
 #leftArrow { float: left; }
 
-#leftArrow:hover, #rightArrow:hover, #toHome:hover, #toLevels:hover { transition: 0.25s ease; }
-
-#rightArrow { float: right; }
-
-#toHome {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    float: left;
-}
+#leftArrow:hover, #toLevels:hover { transition: 0.25s ease; }
 
 #toLevels {
-    position: absolute;
-    right: 0;
-    bottom: 0;
     float: right;
 }
 

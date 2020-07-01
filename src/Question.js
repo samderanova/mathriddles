@@ -22,8 +22,6 @@ class Question extends React.Component {
         });
     }
     render() {
-        var nextLevelBtn = document.getElementById("rightArrow");
-        
         // render unique questions based on characters/shapes unable to be read by JSON
         var questionNum = this.props.questionNum;
         var output = [];
@@ -234,6 +232,7 @@ class Question extends React.Component {
                         <h3>x + y = 120</h3>
                         <h3>y + z = 5</h3>
                         <h3>z = the greatest zero of the graph of x<sup>2</sup> - 1</h3>
+                        <h3>x = ?</h3>
                     </div>
                 );
                 break;
@@ -247,16 +246,52 @@ class Question extends React.Component {
             case 51:
                 output.push(
                     <div key={16}>
-                        <h3>i<sup>2</sup> = -1</h3>
-                        <h3>i<sup>x</sup> + 3 = x</h3>
+                        <h3><i>i</i><sup>2</sup> = -1</h3>
+                        <h3><i>i</i><sup>x</sup> + 3 = x</h3>
                         <h3>x = ?</h3>
+                    </div>
+                );
+                break;
+            case 53:
+                output.push(
+                    <div key={17}>
+                        <h3>(2<i>i</i> + 3) - (3<i>i</i> + 31) = ? - <i>i</i></h3>
                     </div>
                 );
                 break;
             case 54:
                 output.push(
-                    <div key={17}>
-                        <h3>(5i + 2)<sup>2</sup> = ? + 20i + 4</h3>
+                    <div key={18}>
+                        <h3>(5<i>i</i> + 2)<sup>2</sup> = ? + 20<i>i</i> + 4</h3>
+                    </div>
+                );
+                break;
+            case 56:
+                output.push(
+                    <div key={19}>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>sin</td>
+                                    <td>cos</td>
+                                    <td>tan</td>
+                                </tr>
+                                <tr>
+                                    <td>   </td>
+                                    <td> &#120587; </td>
+                                    <td>   </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>?</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 );
                 break;
@@ -285,19 +320,16 @@ class Question extends React.Component {
             ReactDOM.render(<React.StrictMode><Question questionNum={questionNum+1} /></React.StrictMode>, document.getElementById("root"));
             document.getElementById("CorI").innerHTML = "";
             document.getElementById("ans").value = "";
-            nextLevelBtn.onclick = null;
-            nextLevelBtn.setAttribute("class", "");
+            ReactDOM.render("", document.getElementById("nextLevel"));
         }
+        
         return (
             <div className="display">
 
                 <button type="button" id="leftArrow" onClick={renderPreviousLevel}>&larr;</button>
-                <button type="button" id="rightArrow">&rarr;</button>
-                <button type="button" id="toHome" onClick={_ => document.location.reload()}><i className="material-icons">home</i></button>
                 <button type="button" id="toLevels" onClick={_ => {
                     ReactDOM.render(<React.StrictMode><Levels /></React.StrictMode>, document.getElementById("root"));
                 }}><i className="material-icons">menu</i></button>
-
                 <div className="container">
                     <div className="question">
                         <h1>Level {questionNum}</h1>
@@ -323,17 +355,14 @@ class Question extends React.Component {
                             else {
                                 /* add html to notify user that answer is correct, set cookie saying that the level is solved,
                                 make the right arrow active, */
-                                document.getElementById("CorI").innerHTML = "Correct! Press the \"space\" key to head to the next level.";
+                                document.getElementById("CorI").innerHTML = "Correct! Click the button below to head to the next level.";
                                 document.cookie = `${this.props.questionNum}=true`;
-                                nextLevelBtn.setAttribute("class", "active");
-                                nextLevelBtn.onclick = function () { renderNewLevel() }
-                                document.body.onkeyup = function(event) {
-                                    event.preventDefault();
-                                    if (event.keyCode === 32) nextLevelBtn.click();
-                                };
+                                var nextLevelBtn = <button id="nextLevelBtn" onClick={renderNewLevel}>Advance!</button>
+                                ReactDOM.render(nextLevelBtn, document.getElementById("nextLevel"));
                             }
                         }}>&uarr;</button>
                         <p id="CorI"></p>
+                        <div id="nextLevel"></div>
                     </div>
                 </div>
             </div>

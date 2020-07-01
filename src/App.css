@@ -1,8 +1,6 @@
-.home {
-    text-align: center;
-}
+.home { text-align: center }
 
-.home button {
+.home button, .How2Play button, #nextLevel button {
     font-size: 18px;
     margin: 0 10px;
     min-width: 100px;
@@ -10,23 +8,17 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .home {
-        padding: 30px;
-    }
+    .home { padding: 30px; }
 }
+
 @media only screen and (min-width: 500px) and (max-width: 900px) {
-    .home {
-        padding: 0 150px;
-    }
+    .home {padding: 0 150px;}
 }
+
 @media only screen and (min-width: 1000px) {
-    .home {
-        padding: 0 400px;
-    }
+    .home { padding: 0 400px; }
 }
 
 @media (prefers-color-scheme: dark) {
-    #play, #levels {
-        background-color: lightgray;
-    }
+    #play, #levels { background-color: lightgray; }
 }

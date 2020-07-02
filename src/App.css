@@ -1,6 +1,6 @@
 .home { text-align: center }
 
-.home button, .How2Play button, #nextLevel button {
+.home button, .How2Play button, #nextLevel button, .Congrats button {
     font-size: 18px;
     margin: 0 10px;
     min-width: 100px;

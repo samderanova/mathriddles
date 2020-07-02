@@ -21,7 +21,7 @@ class Levels extends React.Component {
         for (var cookie of cookieArray) {
             solvedClues.push(parseInt(cookie));
         }
-        for (var i=1; i<=solvedClues.length+1; i++) {
+        for (var i=1; i<=solvedClues.length; i++) {
             /* all buttons except the first level have been disbled; removes disabled attribute for those that have been solved
             plus the one directly afterwards that has not been solved yet*/
             document.getElementById(i).removeAttribute("disabled"); 

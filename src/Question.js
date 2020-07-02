@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Question.css';
 import Levels from './Levels';
+import Congrats from './Congrats';
 var obj = require("./Questions.json");
 
 class Question extends React.Component {
@@ -38,7 +39,7 @@ class Question extends React.Component {
             case 17:
                 output.push(
                     <div key={2}>
-                        <h3>A(<span className="circle">&#9675;</span>) = &#960;r<sup>2</sup></h3>
+                        <h3>A(&#9675;) = &#960;r<sup>2</sup></h3>
                         <h3><span className="">r = 3</span></h3>
                         <h3>A(&#9675;) = ?</h3>
                         <h3>Round your answer to 3 decimal places.</h3>
@@ -358,7 +359,13 @@ class Question extends React.Component {
                                 document.getElementById("CorI").innerHTML = "Correct! Click the button below to head to the next level.";
                                 document.cookie = `${this.props.questionNum}=true`;
                                 var nextLevelBtn = <button id="nextLevelBtn" onClick={renderNewLevel}>Advance!</button>
-                                ReactDOM.render(nextLevelBtn, document.getElementById("nextLevel"));
+                                if (questionNum === 60) {
+                                    var finishedBtn = <button id="finishedBtn" onClick={_ => ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"))}>Advance!</button>
+                                    ReactDOM.render(finishedBtn, document.getElementById("nextLevel"));
+                                }
+                                else {
+                                    ReactDOM.render(nextLevelBtn, document.getElementById("nextLevel"));
+                                }
                             }
                         }}>&uarr;</button>
                         <p id="CorI"></p>

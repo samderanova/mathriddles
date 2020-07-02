@@ -5,6 +5,7 @@ import App from './App';
 import How2Play from './How2Play';
 import Levels from './Levels';
 import Question from './Question';
+import Congrats from './Congrats';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -19,8 +20,16 @@ document.getElementById("play").onclick = function() {
     for (var cookie of cookieArray) {
         solvedClues.push(parseInt(cookie));
     }
+    console.log(solvedClues);
     var lastClueSolved = solvedClues[solvedClues.length-1];
-    ReactDOM.render(<React.StrictMode><Question questionNum={lastClueSolved+1} /></React.StrictMode>, document.getElementById("root"));
+    console.log(lastClueSolved);
+    if (lastClueSolved === 60) {
+      ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"));
+    }
+    else {
+      ReactDOM.render(<React.StrictMode><Question questionNum={lastClueSolved+1} /></React.StrictMode>, document.getElementById("root"));
+  
+    }
   }
   else {
     ReactDOM.render(<React.StrictMode><How2Play /></React.StrictMode>, document.getElementById("root"));

@@ -15,7 +15,7 @@
   }
 }
 
-.levels, .display, .How2Play {
+.levels, .display, .How2Play, .Congrats {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 2s;
@@ -35,7 +35,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App .container, .display .container {
+.App .container, .display .container, .Congrats .container {
   display: flex;
   display: -moz-flex;
   display: -webkit-flex;

@@ -326,7 +326,6 @@ class Question extends React.Component {
         
         return (
             <div className="display">
-
                 <button type="button" id="leftArrow" onClick={renderPreviousLevel}>&larr;</button>
                 <button type="button" id="toLevels" onClick={_ => {
                     ReactDOM.render(<React.StrictMode><Levels /></React.StrictMode>, document.getElementById("root"));
@@ -357,6 +356,7 @@ class Question extends React.Component {
                                 /* add html to notify user that answer is correct, set cookie saying that the level is solved,
                                 make the right arrow active, */
                                 document.getElementById("CorI").innerHTML = "Correct! Click the button below to head to the next level.";
+                                
                                 document.cookie = `${this.props.questionNum}=true`;
                                 var nextLevelBtn = <button id="nextLevelBtn" onClick={renderNewLevel}>Advance!</button>
                                 if (questionNum === 60) {
@@ -376,5 +376,4 @@ class Question extends React.Component {
         )
     }
 }
-
 export default Question;

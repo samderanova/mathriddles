@@ -8,27 +8,29 @@ import Question from './Question';
 import Congrats from './Congrats';
 import * as serviceWorker from './serviceWorker';
 
-
+export default function checkCookies() {
+  var cookies = document.cookie;
+  var cookieArray = cookies.split(";");
+  var solvedClues = [];
+  for (var cookie of cookieArray) {
+    var testIfNum = parseInt(cookie);
+    if (testIfNum) solvedClues.push(testIfNum);
+  }
+  return solvedClues;
+}
 
 ReactDOM.render(<React.StrictMode><App /></React.StrictMode>, document.getElementById('root'));
 
 document.getElementById("play").onclick = function() {
   var cookies = document.cookie;
   if (cookies) {
-    var cookieArray = cookies.split(";");
-    var solvedClues = [];
-    for (var cookie of cookieArray) {
-        solvedClues.push(parseInt(cookie));
-    }
-    console.log(solvedClues);
+    var solvedClues = checkCookies();
     var lastClueSolved = solvedClues[solvedClues.length-1];
-    console.log(lastClueSolved);
     if (lastClueSolved === 60) {
       ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"));
     }
     else {
       ReactDOM.render(<React.StrictMode><Question questionNum={lastClueSolved+1} /></React.StrictMode>, document.getElementById("root"));
-  
     }
   }
   else {

@@ -26,7 +26,7 @@ document.getElementById("play").onclick = function() {
   if (cookies) {
     var solvedClues = checkCookies();
     var lastClueSolved = solvedClues[solvedClues.length-1];
-    if (lastClueSolved === 60) {
+    if (lastClueSolved === 61) {
       ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"));
     }
     else {

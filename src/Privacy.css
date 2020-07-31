@@ -16,7 +16,7 @@
 }
 
 .navbar h1, .navbar button {
-    padding: 20px;
+    padding: 15px;
 }
 
 .col-sm {
@@ -25,7 +25,16 @@
     width: 25%;
 }
 
-.col-sm h2:hover {
+.col-sm a {
+    color: black;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.col-sm a:hover {
     color: gray;
     transition: 0.2s linear
 }

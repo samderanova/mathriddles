@@ -9,8 +9,7 @@ function App() {
           <h1>Math Riddles Online</h1>
           <button type="button" id="play">Play</button>
           <button type="button" id="levels">Levels</button>
-          <h3>IMPORTANT: This game relies on cookies to track progress. Clearing them will eliminate your progress!</h3>
-          <p id="privacy">Privacy Policy</p>
+          <h3>Before you play, please take some time to read our <a href="#" id="privacy">privacy policy</a>!</h3>
         </div>
       </div>
     </div>

@@ -318,6 +318,10 @@ class Question extends React.Component {
         /* after the level is solved, when the right arrow is clicked, render next clue, clear the correct/incorrect text
         and input value*/
         function renderNewLevel() {
+            if (questionNum === 61) {
+                ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"));
+                return;
+            }
             ReactDOM.render(<React.StrictMode><Question questionNum={questionNum+1} /></React.StrictMode>, document.getElementById("root"));
             document.getElementById("CorI").innerHTML = "";
             document.getElementById("ans").value = "";

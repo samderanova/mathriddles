@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+
+.navbar {
+    background: white;
+    position: sticky;
+    position: -webkit-sticky;
+    vertical-align: middle;
+    top: 0;
+}
+
+.navbar button { position: absolute; }
+
+.navbar h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.navbar h1, .navbar button {
+    padding: 20px;
+}
+
+.col-sm {
+    position: sticky;
+    top: 16%;
+    width: 25%;
+}
+
+.col-sm h2:hover {
+    color: gray;
+    transition: 0.2s linear
+}
+
+.col-md {
+    width: 75%;
+}
+
+.col-sm, .col-md {
+    display: inline-block;
+    line-height: 2em;
+    padding: 0 15px;
+    vertical-align: top;
+}
+
+.col-sm p, .col-md p {
+    font-size: 18px;
+}

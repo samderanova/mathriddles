@@ -6,6 +6,7 @@ import How2Play from './How2Play';
 import Levels from './Levels';
 import Question from './Question';
 import Congrats from './Congrats';
+import Privacy from './Privacy';
 import * as serviceWorker from './serviceWorker';
 
 export default function checkCookies() {
@@ -42,7 +43,9 @@ document.getElementById("levels").onclick = function() {
   ReactDOM.render(<React.StrictMode><Levels /></React.StrictMode>, document.getElementById("root"));
 }
 
-
+document.getElementById("privacy").onclick = function() {
+  ReactDOM.render(<React.StrictMode><Privacy /></React.StrictMode>, document.getElementById("root"));
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

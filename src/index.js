@@ -8,6 +8,7 @@ import Question from './Question';
 import Congrats from './Congrats';
 import Privacy from './Privacy';
 import * as serviceWorker from './serviceWorker';
+import numLevels from './numLevels';
 
 export default function checkCookies() {
   var cookies = document.cookie;
@@ -27,7 +28,7 @@ document.getElementById("play").onclick = function() {
   if (cookies) {
     var solvedClues = checkCookies();
     var lastClueSolved = solvedClues[solvedClues.length-1];
-    if (lastClueSolved === 61) {
+    if (lastClueSolved === numLevels) {
       ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"));
     }
     else {

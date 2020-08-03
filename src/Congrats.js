@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './Congrats.css';
 import Levels from './Levels';
 
 function Congrats() {

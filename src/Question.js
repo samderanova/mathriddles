@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './Question.css';
 import Levels from './Levels';
 import Congrats from './Congrats';
+import numLevels from './numLevels';
 var obj = require("./Questions.json");
 
 class Question extends React.Component {
@@ -318,7 +319,7 @@ class Question extends React.Component {
         /* after the level is solved, when the right arrow is clicked, render next clue, clear the correct/incorrect text
         and input value*/
         function renderNewLevel() {
-            if (questionNum === 61) {
+            if (questionNum === numLevels) {
                 ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"));
                 return;
             }
@@ -363,7 +364,7 @@ class Question extends React.Component {
                                 
                                 document.cookie = `${this.props.questionNum}=true`;
                                 var nextLevelBtn = <button id="nextLevelBtn" onClick={renderNewLevel}>Advance!</button>
-                                if (questionNum === 60) {
+                                if (questionNum === numLevels) {
                                     var finishedBtn = <button id="finishedBtn" onClick={_ => ReactDOM.render(<React.StrictMode><Congrats /></React.StrictMode>, document.getElementById("root"))}>Advance!</button>
                                     ReactDOM.render(finishedBtn, document.getElementById("nextLevel"));
                                 }

@@ -14,12 +14,15 @@ function How2Play() {
                     <h3>2 + 4 = x</h3>
                     <h3>x + 5 = ?</h3>
                     <p>Using algebra, the answer, indicated by the question mark, is 11. Unfortunately, the clues won't be as 
-                        simple as the ones in this level, but the underlying concept is quite understandable. Also, each clue 
+                        simple as the ones in this level, but the underlying concept is quite understandable. Each clue 
                         contains different patterns that need to be applied to the rest of the clues in order to complete the 
-                        level. Naturally, until one level is solved, the player may not move on to the next one.</p>
-                    <p>And lastly, in order to have the best experience playing this game, please update your browser to the latest
+                        level. Naturally, until one level is solved, you may not move on to the next one.</p>
+                    <p>Perhaps most importantly, in order to have the best experience playing this game, please update your browser to the latest
                         version possible.</p>
-                    <h2>Good luck and let your skills be put to the test!</h2> 
+                    <h2>Good luck and let your skills be put to the test!</h2>
+                    <p>One final note: Multiplication and division will be represented as * and / respectively
+                        unless otherwise indicated.
+                    </p>
                     <button type="button" onClick={_ => ReactDOM.render(<React.StrictMode><Question questionNum={1} /></React.StrictMode>, document.getElementById("root"))}>Level 1</button>
                 </div>
             </div>

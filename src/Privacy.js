@@ -10,38 +10,38 @@ class Privacy extends React.Component {
                     <h1>Privacy Policy</h1>
                     <hr style={{padding: "0"}}/>
                 </div>
-                <div className="col-sm">
-                    <a href="#cookies">Cookies</a>
-                    <a href="#ga">Google Analytics</a>
-                </div>
                 <div className="col-md">
-                    <p>Hello! Thanks for choosing to play this game. This privacy policy is for you can understand what
-                        information this game collects about you, so you can play with an easy mind without any concerns
-                        about your privacy. The following sections are the information that the application logs and collects.
+                    <p>Thank you for choosing to play this game! This privacy policy is for you can understand what
+                        information this game will collect about you, so you can play with an easy mind without any concerns
+                        about your privacy. The following sections are the information that the application logs.
                     </p>
                     <h2 id="cookies">Cookies</h2>
-                    <p>This application utilizes cookies for the sole purpose of logging your progress, the levels you've completed
-                        and those you haven't. As a result, the entire game relies on these cookies! This means that if you choose
-                        to block or clear cookies on this website, this game will be very difficult to play. Thus by clicking the 
-                        "play" button or accessing any of the levels through the "levels" button, you automatically choose to allow 
-                        the game to set cookies on your browser.
-                        <br></br><br></br>
-                        To see what cookies the game sets, you can either access the cookie settings of your browser or navigate
-                        through the Developer Tools of your browser.
+                    <p>Cookies are bits of data that are downloaded onto your device when you visit a website, such as this one!
+                        There are three types of such cookies: session, persistent, and third-party. Session cookies are stored
+                        on your computer as long as you are on a website that uses such cookies and eliminated as soon as you leave
+                        the site. Persistent cookies, however, are not deleted and instead, remain on your device until you 
+                        delete them manually. Finally, third party cookies are cookies used from another website for purposes 
+                        like tracking.
                     </p>
-                    <h2 id="ga">Google Analytics</h2>
-                    <p>If you're checking out the cookies the website has logged, you may see some unfamiliar ones. These 
-                        are cookies set by Google Analytics. We use this Google service to track consumer behavior on the webiste
-                        as well as overall website performance, so we can continue to add to the game.
-                        <br></br><br></br>
-                        If you feel uncomfortable about this tracking mechanism, feel free to block trackers in your browser settings
-                        or turn on "Do Not Track" requests.
-                        <br></br><br></br>
-                        For more on information gathering, please visit the "Measure performance" section at&nbsp;
-                        <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.
+                    <p>The only cookies this game uses are persistent cookies. This application utilizes such cookies for the sole 
+                        purpose of logging your progress (the levels you've completed and those you haven't) and nothing else. 
+                        None of your personal information is logged onto these cookies, and we do not disclose anything to third
+                        party applications.
+                    </p>
+                    <p>As you may have realized by now, the entire game relies only on cookies. This means that if 
+                        you choose to block or clear cookies on this website, your progress will be reset! 
+                        Thus by clicking the "play" button or accessing any of the levels through the "levels" 
+                        button, you choose to allow the game to set these kinds of cookies on your browser.
+                    </p>
+                    <p>To see what cookies the game sets, you can either access the cookie settings of your browser or navigate
+                        to the Developer Tools of your browser under the Cookies section of the Application tab. You can 
+                        clear cookies set by this website by clicking the small "prohibited" symbol in the top right hand corner of 
+                        the Cookies section or by clearing the cookies of this website in your browser settings.
                     </p>
                 </div>
-                
+                <div className="thanks">
+                    <p>Thank you for reading our privacy policy. Now get out there and test your math skills!</p>
+                </div>
             </div>
         )
     }

@@ -4,12 +4,12 @@ import './Levels.css';
 import Question from './Question';
 import './Questions.json';
 import checkCookies from './index';
-
+import numLevels from './numLevels';
 
 //create buttons labeled from 1 to 100 and stores them in an array
 var newButtons = [];
 newButtons.push(<button key={1} type="button" id={1}>1</button>)
-for (var i=2; i<62; i++) {
+for (var i=2; i<numLevels+1; i++) {
     newButtons.push(<button key={i} type="button" id={i} disabled>{i}</button>);
 }
 

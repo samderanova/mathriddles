@@ -19,37 +19,15 @@
     padding: 15px;
 }
 
-.col-sm {
-    position: sticky;
-    top: 16%;
-    width: 25%;
+
+.col-md, .thanks {
+    padding: 0 25px;
 }
 
-.col-sm a {
-    color: black;
-    display: block;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 20px;
-    text-decoration: none;
-}
-
-.col-sm a:hover {
-    color: gray;
-    transition: 0.2s linear
-}
-
-.col-md {
-    width: 75%;
-}
-
-.col-sm, .col-md {
-    display: inline-block;
-    line-height: 2em;
-    padding: 0 15px;
-    vertical-align: top;
-}
-
-.col-sm p, .col-md p {
+.col-md p, .thanks {
     font-size: 18px;
+}
+
+.thanks {
+    text-align: center;
 }

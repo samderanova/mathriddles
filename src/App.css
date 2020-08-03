@@ -7,6 +7,10 @@
     padding: 10px;
 }
 
+.cookieWarning span {
+    color: blue;
+    text-decoration: underline;
+}
 
 
 @media only screen and (max-width: 500px) {
